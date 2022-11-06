@@ -1,4 +1,4 @@
-# RD-DMS
+# Instructions App
 
 ## Initial setup with Docker-Compose
 
