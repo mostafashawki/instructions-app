@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - ./data-mongodb:/data/db
+    ports:
+      - '27018:27017'
+    networks:
+      - rddms
+
+  backend:
+    build:
+      context: ./backend/
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - '3030:3030'
+    environment:
+      VIRTUAL_HOST: rddms-api.localhost
+      MONGODB_URI: mongodb://mongodb:27017/rddms
+    
+      PUBLIC_URL: 'http://rddms.localhost/'
+    command: 'npm run dev'
+    networks:
+      - rddms
+
+  frontend:
+    build:
+      context: ./frontend
+      target: 'development-stage'
+    ports:
+      - '8080:8080'
+    volumes:
+      - './frontend:/app'
+    environment:
+      VIRTUAL_HOST: rddms.localhost
+      VUE_APP_API_URL: rddms-api.localhost
+    command: /bin/sh -c "quasar dev"
+    networks:
+      - rddms
+
+  rddms-mails: 
+    image: schickling/mailcatcher
+    ports: 
+      - '1025:1025'
+      - '1080:1080'
+    environment: 
+      VIRTUAL_HOST: mailcatcher.localhost
+      VIRTUAL_PORT: 1080
+    networks: 
+      - rddms
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - rddms
+
+networks:
+  rddms:

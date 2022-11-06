@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p <strong>Ihre Password wurde erfolgreich bestätigt,</strong>
+      p Zum Login Bereich gelangen Sie durch Klicken auf den untenstehenden Button:
+      p <a class="btn" href="#{loginLink}">Zum Login</a>
+      p Oder klicken Sie auf folgenden Link: <a href="#{loginLink}">#{loginLink}</a>
+      p Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
+      p Wir freuen uns auf die gemeinsame Zusammenarbeit.
+      p Herzliche Grüße<br>Ihr DMS-Team
+    include ../includes/footer.pug

@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p <strong>Confirm your new E-mail! </strong>
+      p You can confirm your E-mail address by clicking on the button below:
+      p <a class="btn" href="#{tokenLink}">Confirm E-mail</a>
+      p Or click on the following link: <a href="#{tokenLink}">#{tokenLink}</a>
+      p If you have any questions, please do not hesitate to contact us.
+      p We look forward to working together.
+      p Kind regards<br>Ihr DMS-Team
+    include ../includes/footer.pug

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - ./data-mongodb:/data/db
+    ports:
+      - '27018:27017'
+    networks:
+      - rddms-test
+
+  backend:
+    build:
+      context: ./backend/
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - '3030:3030'
+    environment:
+      VIRTUAL_HOST: rddms-api.localhost
+    entrypoint: 'npm run test-linux --'
+    networks:
+      - rddms-test
+
+networks:
+  rddms-test:

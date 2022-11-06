@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p Sie haben ein Zurücksetzen Ihres Passworts angefragt.
+      p Bitte klicken Sie dazu auf den untenstehenden Button:
+      p <a class="btn" href="#{tokenLink}">Passwort zurücksetzen</a>
+      p Oder rufen Sie folgenden Link auf: <a href="#{tokenLink}">#{tokenLink}</a>
+      p Wenn Sie nicht derjenige waren, der das Zurücksetzen des Passworts beantragt hat, ignorieren Sie bitte diese E-Mail.
+      p Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
+      p Herzliche Grüße<br>Ihr DMS-Team
+    include ../includes/footer.pug

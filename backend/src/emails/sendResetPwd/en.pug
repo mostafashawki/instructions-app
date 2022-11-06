@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p You have requested a password reset.
+      p Please click on the button below:
+      p <a class="btn" href="#{tokenLink}">Reset password</a>
+      p Or call up the following link: <a href="#{tokenLink}">#{tokenLink}</a>
+      p If it was not you, who requested to reset the password, please ignore this email.
+      p If you have any questions, please do not hesitate to contact us at any time.
+      p Kind regards<br>DMS-Team
+    include ../includes/footer.pug

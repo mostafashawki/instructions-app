@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p <strong>Bestätigen Sie Ihre neue E-Mail-Adresse!  </strong>
+      p Sie können Ihre E-Mail-Adresse bestätigen, indem Sie auf die Schaltfläche unten klicken:
+      p <a class="btn" href="#{tokenLink}">E-Mail bestätigen</a>
+      p Oder klicken Sie auf den folgenden Link:<a href="#{tokenLink}">#{tokenLink}</a>
+      p Wenn Sie Fragen haben, zögern Sie bitte nicht, uns zu kontaktieren.
+      p Wir freuen uns auf die Zusammenarbeit.
+      p Mit freundlichen Grüßen<br>Ihr DMS-team.
+    include ../includes/footer.pug

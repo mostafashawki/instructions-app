@@ -1,0 +1,13 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p Your password has been successfully changed. You can now log in DMS with the password you have just assigned. 
+      p You can access the login area by clicking on the button below:
+      p <a class="btn" href="#{loginLink}">To Login</a>
+      p Or click on the following link: <a href="#{loginLink}">#{loginLink}</a>
+      pFor any queries, please do not hesitate to contact us at any time. 
+      p Best regards<br> DMS-Team
+    include ../includes/footer.pug

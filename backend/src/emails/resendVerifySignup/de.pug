@@ -1,0 +1,15 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p <strong>Herzlich Willkommen im DMS,</strong>
+      p dem DMS Management.
+      p Ihre E-Mailadresse wurde erfolgreich bestätigt.
+      p Sie können Ihr Passwort erstellen, indem Sie auf die folgende Schaltfläche klicken:
+      p <a class="btn" href="#{tokenLink}">Ihr Passwort erstellen</a>     
+      p Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
+      p Wir freuen uns auf die gemeinsame Zusammenarbeit.
+      p Herzliche Grüße<br>Ihr DMS-Team
+    include ../includes/footer.pug

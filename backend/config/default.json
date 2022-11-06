@@ -1,0 +1,40 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "publicurl": "PUBLIC_URL",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "rcLB6jJ04men0ZmK9N2PDeimf9U=",
+    "authStrategies": ["jwt", "local"],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "16h"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mailer": {
+    "smtp": {
+      "host": "rddms-mails",
+      "port": "1025"
+    },
+    "header": {
+      "from": "admin@localhost"
+    }
+  },
+   
+  "mongodb": "MONGODB_URI"
+}

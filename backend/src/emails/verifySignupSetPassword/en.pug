@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../includes/head.pug
+  body
+    include ../includes/header.pug
+    div.content
+      p <strong>Your password has been successfully saved </strong>
+      p You can access the login area by clicking on the button below:
+      p <a class="btn" href="#{loginLink}">To Login</a>
+      p Or click on the following link: <a href="#{loginLink}">#{loginLink}</a>
+      p If you have any questions, please do not hesitate to contact us.
+      p We look forward to working together.
+      p Kind regards<br>Ihr DMS-Team
+    include ../includes/footer.pug
